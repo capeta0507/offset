@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>offset</title>
+    <script src="js/jquery 3.5.1.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    a{
+        text-decoration: none;
+    }
+    .nav{
+        width: 100%;
+        padding: 10px 30px;
+        background-color: black;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .nav ul{
+        display: flex;
+        list-style-type: none;
+    }
+    .nav ul li{
+        color: #fff;
+        font: 20px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .nav ul li a{
+        color: #fff;
+
+    }
+    .nav ul li a:hover{
+        color: #fff;
+        display: inline-block;
+    }
+    .work-pos{
+        width: 100%;
+        height: 150vh;
+        padding: 0 50px;
+        font-size: 30px;
+    }
+    .position1{
+        background-color: aqua;
+        margin-top: 60px;
+    }
+    .position2{
+        background-color: coral;
+    }
+    .position3{
+        background-color: darkgrey;
+    }
+</style>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a class="work-click" href="#position1">第一部</a></li>
+            <li><a class="work-click" href="#position2">第二部</a></li>
+            <li><a class="work-click" href="#position3">第三部</a></li>
+        </ul>
+    </div>
+    <div id="position1" class="work-pos position1">part 1</div>
+    <div id="position2" class="work-pos position2">part 2</div>
+    <div id="position3" class="work-pos position3">part 3</div>
+    <script>
+        $('.work-click').click(function(event){
+            event.preventDefault();
+            var x = $(this).attr('href');
+            // console.log(this);
+
+            $('html, body').animate({
+                scrollTop: $(x).offset().top-60
+            }, 500)
+
+        });
+    </script>
+</body>
+</html>
