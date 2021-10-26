@@ -24,6 +24,7 @@
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 2;
     }
     .nav ul{
         display: flex;
@@ -48,6 +49,7 @@
         height: 150vh;
         padding: 0 50px;
         font-size: 30px;
+        position: relative;
     }
     .position1{
         background-color: aqua;
@@ -68,9 +70,15 @@
             <li><a href="#position3" class="work-click">第三部</a></li>
         </ul>
     </div>
-    <div id="position1" class="work-pos position1">part 1</div>
-    <div id="position2" class="work-pos position2">part 2</div>
-    <div id="position3" class="work-pos position3">part 3</div>
+    <div id="position1" class="work-pos position1">part 1
+        <a href="index_href.html">index_href pos1</a>
+    </div>
+    <div id="position2" class="work-pos position2">part 2
+        <a href="index_href.html#pos2">index_href pos2</a>
+    </div>
+    <div id="position3" class="work-pos position3">part 3
+        <a href="index_href.html#pos3">index_href pos3</a>
+    </div>
     <script>
         $('.work-click').click(function(event){
             event.preventDefault();
